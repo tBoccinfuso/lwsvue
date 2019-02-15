@@ -1,29 +1,37 @@
 # vue4u
 
+A small little app to show off how Vue.js can work.
+
 ## Project setup
+
 ```
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 yarn run serve
 ```
 
 ### Compiles and minifies for production
+
 ```
 yarn run build
 ```
 
 ### Run your tests
+
 ```
 yarn run test
 ```
 
-### Lints and fixes files
-```
-yarn run lint
-```
+### What you will learn
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. Vuex - State Management
+
+2. Vue Router - Create / Manage routes
+
+3. Views & Components
+
+4. Life Cycles

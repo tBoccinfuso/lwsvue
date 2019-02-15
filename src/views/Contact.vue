@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
-    <img src="@/assets/lws_main.png" alt="LWS logo">
-    <img src="@/assets/logo.png" alt="Vue logo">
+  <div class="contact">
+    <Client/>  
   </div>
 </template>
 
@@ -9,7 +8,7 @@
 import Client from '@/components/Client.vue'
 
 export default {
-  name: 'home',
+  name: 'contact',
   components: { // Allow rendering of the Client component
     Client
   }
@@ -18,7 +17,7 @@ export default {
 
 
 <style lang="scss" scoped>
-  img {
-    height: 96px;
+  .contact {
+    display: flex;
   }
 </style>
