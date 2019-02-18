@@ -35,3 +35,7 @@ yarn run test
 3. Views & Components
 
 4. Life Cycles
+
+5. Transitions
+
+6. Splitting Files (modular code)
