@@ -52,6 +52,6 @@ export default new Router({
         description: 'Look how cool I am.'
       },
       component: Property
-    },
+    }
   ]
 })

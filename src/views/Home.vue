@@ -6,16 +6,10 @@
 </template>
 
 <script>
-import Client from '@/components/Client.vue'
-
 export default {
-  name: 'home',
-  components: { // Allow rendering of the Client component
-    Client
-  }
+  name: 'home'
 }
 </script>
-
 
 <style lang="scss" scoped>
   img {

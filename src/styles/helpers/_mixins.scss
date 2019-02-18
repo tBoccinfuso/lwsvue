@@ -1,0 +1,291 @@
+@mixin flex-direction($direction){
+  -webkit-flex-direction: $direction; /* Safari 6.1+ */
+  flex-direction: $direction;
+}
+
+@mixin justify-content($alignment){
+  -webkit-justify-content: $alignment; /* Safari 6.1+ */
+  justify-content: $alignment;
+}
+
+@mixin flexbox(){
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-row(){
+  @include flexbox();
+  @include flex-direction(row);
+  word-wrap: break-word;
+}
+
+@mixin flex-column(){
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(center);
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+@mixin set_opacity($color, $alpha, $useFilter: true) {
+  @if length($color) == 1 {
+    //background-color: $color; //fix for IE8
+    background-color: rgba($color, $alpha);
+  } @else if length($color) == 3 {
+    background-color: rgb(nth($color, 1), nth($color, 2), nth($color, 3));  //fix for IE8
+    background-color: rgba(nth($color, 1), nth($color, 2), nth($color, 3), $alpha);
+  } @else {
+    @warn "Cannot use opacity mixin with " + length($color) + " $color list elements. Only works with 1 or 3.";
+  }
+  @if $useFilter {
+    filter: alpha(opacity=$alpha*100);
+  }
+}
+
+@mixin background_gradient($topColor,$bottomColor) {
+  background-image: -ms-linear-gradient(top, $topColor, $bottomColor);
+  background-color: $topColor;
+  background-image: -khtml-gradient(linear, left top, left bottom, from($topColor), to($bottomColor));
+  background-image: -moz-linear-gradient(top, $topColor, $bottomColor);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $topColor), color-stop(100%, $bottomColor));
+  background-image: -webkit-linear-gradient(center, $topColor, $bottomColor);
+  background-image: -o-linear-gradient(top, $topColor, $bottomColor);
+  background-image: linear-gradient(top, $topColor, $bottomColor);
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+     -moz-transform: $value;
+      -ms-transform: $value;
+       -o-transform: $value;
+          transform: $value;
+}
+
+@mixin image($filename_sans_ext, $ext, $background_size) {
+    $file: '#{$filename_sans_ext}.#{$ext}';
+    $file2x: '#{$filename_sans_ext}@2x.#{$ext}';
+
+    background-image:url('../images/#{$file}');
+    background-size:$background_size;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    @media #{$retina} {
+        background-image:url('../images/#{$file2x}');
+    }
+}
+
+@mixin cssImage($filename_sans_ext, $ext, $width, $height) {
+    width:$width;
+    height:$height;
+    @include image($filename_sans_ext, $ext, #{$width} #{$height});
+}
+
+//turn inline tag like <a> into an image-based button
+@mixin linkButton($width, $height, $filename) {
+    display:inline-block;
+    overflow:hidden;
+	text-indent:-2000px;
+    background-repeat:no-repeat;
+    @include cssImage($width, $height, $filename);
+}
+
+//same as above but with hover
+@mixin linkButtonHoverable($width, $height, $filename) {
+    @include linkButton($width, $height, $filename);
+    &:hover {
+        background-position:bottom;
+    }
+}
+
+@mixin loading_fade() {
+  transition: opacity 0.5s;
+
+  &.loading{
+    opacity: 0;
+  }
+}
+
+@mixin flex-direction($direction){
+  -webkit-flex-direction: $direction; /* Safari 6.1+ */
+  flex-direction: $direction;
+}
+
+@mixin justify-content($alignment){
+  -webkit-justify-content: $alignment; /* Safari 6.1+ */
+  justify-content: $alignment;
+}
+
+@mixin flexbox(){
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-row(){
+  @include flexbox();
+  @include flex-direction(row);
+  word-wrap: break-word;
+}
+
+@mixin flex-column(){
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(center);
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+@mixin align-items($alignment){
+  -webkit-align-items: $alignment; /* Safari 7.0+ */
+  align-items: $alignment;
+}
+
+@mixin bg_img($image, $size:cover, $color: null, $position: center center, $repeat: no-repeat, $has_2x: true) {
+  $path: '../images/#{$image}';
+  $url: url($path);
+  background:#{$color} #{$url} #{$position} #{$repeat};
+  background-size: $size;
+  @if($has_2x) {
+    @media #{$retina} {
+      $ext: '';
+      @if(ends-with($path,'.png')) {
+        $ext: '.png';
+      } @else if(ends-with($path,'.jpg')) {
+        $ext: '.jpg';
+      } @else if(ends-with($path,'.jpeg')) {
+        $ext: '.jpeg';
+      } @else if(ends-with($path,'.gif')) {
+        $ext: '.gif';
+      }
+      $path_2x: '#{str-replace($path,$ext)}@2x#{$ext}';
+      $url_2x: url($path_2x);
+      background-image: #{$url_2x};
+    }
+  }
+}
+
+//makes a selector responsive for each (media value) item in list. [e.g make_responsive("display", ($mobile none, $small none))];
+//Each value can be offset by a constant using $offset value.
+@mixin make_responsive($selector, $list_media-value, $offset: "", $makeImportant: false) {
+  @each $media-value in $list_media-value {
+    $media: "";
+    $value: "";
+    $one_time_only: false;
+    @if length($media-value) == 1 { //items are in $list_media_value not $media-value
+      $media: nth($list_media-value, 1);
+      $value: nth($list_media-value, 2);
+      $one_time_only: true;
+    } @else {
+      $media: nth($media-value, 1);
+      $value: nth($media-value, 2);
+    }
+    $value: if($offset == "" or $offset == 0, $value, $value + $offset);
+    $value: if($makeImportant, $value !important, $value);
+    @if $media == $normal {
+      #{$selector}: $value;
+    } @else {
+      @media #{$media}  {
+        #{$selector}: $value;
+      }
+    }
+  }
+}
+
+@mixin set_background($bg-img: null, $bg-ext: null, $bg-dimensions: null, $bg-color: null){
+  @if($bg-img){
+    @include image($bg-img, $bg-ext, $bg-dimensions);
+    background-size: cover;
+  } @else{
+    background-color: $bg-color;
+  }
+}
+
+@mixin placeholder_color($color){
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $color;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: $color;
+  }
+  ::placeholder {
+    color: $color;
+  }
+}
+
+
+/*
+ * @param $h1-size - the inital h1 size
+ * @param $amount - OPTIONAL: pass in the amount you want to to scale down each header by
+ * @include headers(55px, 5px);
+*/
+@mixin headers($h1-size, $amount: null) {
+  @if($h1-size == null){
+    $h1-size: 55px;
+  }
+  @if ($amount == null) {
+    $amount: 10px;
+  }
+  // Font-sizes
+  $h1: $h1-size;
+  $h2: calc(#{$h1} - #{$amount});
+  $h3: calc(#{$h2} - #{$amount});
+  $h4: calc(#{$h3} - #{$amount});
+  $h5: calc(#{$h4} - #{$amount});
+  $h6: calc(#{$h5} - (#{$amount} / 2));
+
+  h1 { font-size: $h1; }
+  h2 { font-size: $h2; }
+  h3 { font-size: $h3; }
+  h4 { font-size: $h4; }
+  h5 { font-size: $h5; }
+  h6 { font-size: $h6; }
+}
+
+/* USED TO MAKE A CUSTOM SCROLL BAR - CHROME
+ * @include scrollbar($brand-main, lighten($brand-main, 20), 10px);
+ */
+
+@mixin scrollbar($thumb-color, $thumb-color-hover, $radius: null, $track-color: null, $width: null) {
+  @if ($radius == null) {
+    $radius: 0;
+  }
+  /* width */
+  @if ($width == null) {
+    $width: 10px;
+  }
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  /* Track */
+  @if ($track-color == null) {
+    $track-color: grey;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px $track-color;
+    border-radius: $radius;
+  }
+
+  /* Handle */  
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-color; 
+    border-radius: $radius;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $thumb-color-hover; 
+  }
+}

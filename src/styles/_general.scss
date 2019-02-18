@@ -1,0 +1,18 @@
+#nav, .nav {
+  text-align: center;
+  font-size: 18px;
+  padding: 30px;
+  a {
+    font-weight: bold;
+    color: $dark-blue;
+    text-decoration: none;
+    &.router-link-exact-active {
+      color: $green;
+    }
+  }
+  .logout-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

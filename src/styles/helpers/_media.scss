@@ -1,0 +1,48 @@
+$portraitMobile: "(max-width: 479px)";
+$phone: $portraitMobile;
+
+$gtPhone: "(min-width: 480px)";
+$notPhone: $gtPhone;
+
+$landscapeMobile: "(min-width: 480px) and (max-width: 767px)";
+$portraitTablet: $landscapeMobile;
+$phoneWide: $landscapeMobile;
+
+$mobile: "(max-width: 767px)";
+$gtMobile: "(min-width: 768px)";
+
+$landscapeTablet: "(min-width: 768px) and (max-width: 979px)";
+$tabletWide: $landscapeTablet;
+
+$ltDesktop: "(max-width: 979px)";
+$gtTablet: "(min-width: 980px)";
+
+$desktop: "(min-width: 980px) and (max-width: 1199px)";
+
+$gtDesktop: "(min-width: 1200px)";
+$ltLarge: "(max-width: 1199px)";
+
+$wide: "(min-width: 1200px) and (max-width: 1499px)";
+
+$ltSuper: "(max-width: 1499px)";
+$gtWide: "(min-width: 1500px)";
+
+$gtWideCustom: "(min-width: 1400px)";
+
+$super: "(min-width: 1500px) and (max-width: 1899px)";
+
+$ltUltra: "(max-width: 1899px)";
+$gtSuper: "(min-width: 1900px)";
+
+$ultra: "(min-width: 1900px) and (max-width: 2499px)";
+
+$ltLarger: "(max-width: 2499px)";
+$gtUltra: "(min-width: 2500px)";
+
+$retina: "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)";
+
+$small: $tabletWide;
+$medium: $desktop;
+$normal: $desktop;
+$large: $gtDesktop;
+$larger: $gtUltra;

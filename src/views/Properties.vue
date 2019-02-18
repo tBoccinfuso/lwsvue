@@ -3,7 +3,7 @@
 
     <h1>Properties</h1>
     <hr>
-    
+
     <div class="property-list">
       <div v-for="property in get_properties" :key='property.id' class="property" :class="property.id.toString()">
 
@@ -16,19 +16,17 @@
         <p>
           <router-link :to="{ name: 'property', params: { permalink: property.permalink } }" :title="property.name">
             View Property
-          </router-link>          
+          </router-link>
         </p>
 
       </div>
-    </div>    
+    </div>
 
   </div>
 </template>
 
-
 <script>
 import { mapGetters } from 'vuex'
-import PropertyPage from '@/views/Property.vue'
 
 export default {
   name: 'properties',

@@ -11,7 +11,7 @@ const state = {
 
 // getters
 const getters = {
-  get_normalized_client_name: (state) => { 
+  get_normalized_client_name: (state) => {
     return state.client.name.replace(/-/g, ' ')
   }
 }
@@ -29,7 +29,6 @@ const actions = {
     commit('CHANGE_PAGE_NAME', payload)
   }
 }
-
 
 // export our 'app' store
 export default {

@@ -13,12 +13,11 @@ export default {
   name: 'client',
   computed: { // Computed properties are by default getter-only, but you can also provide a setter when you need it
     ...mapGetters({
-      get_client: 'app/get_normalized_client_name', // map this.get_client to this.$store.getters['app/get_normalized_client_name']
+      get_client: 'app/get_normalized_client_name' // map this.get_client to this.$store.getters['app/get_normalized_client_name']
     })
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
   .client {

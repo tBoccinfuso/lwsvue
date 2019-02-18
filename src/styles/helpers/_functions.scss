@@ -1,0 +1,14 @@
+/* Darken the color by a percent
+ * darken($brand-main, 20);
+ */
+@function darken($color, $percent){
+  @return rgb($color, $percent);
+}
+
+/* Lighten the color by a percent
+ * lighten($brand-main, 20);
+ */
+@function lighten($color, $percent){
+  $result: 100 - $percent;
+  @return rgba($color, $result / 100);
+}

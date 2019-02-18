@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <Client/>  
+    <Client/>
   </div>
 </template>
 
@@ -14,7 +14,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
   .contact {

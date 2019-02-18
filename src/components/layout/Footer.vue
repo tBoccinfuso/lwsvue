@@ -15,12 +15,7 @@ export default {
     padding: 30px;
     #copyright {
       text-align: center;
-      font-size: 18px;
-    }
-    .nav {
-      a{
-        font-size: 16px;
-      }
+      font-size: 14px;
     }
   }
 </style>

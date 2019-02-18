@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
   name: 'property',
   created () { // When this instance is created but before even being mounted and rendered, Set property = to the params set in main.js

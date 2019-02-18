@@ -1,0 +1,25 @@
+// Override browser defaults
+body {
+  margin: 0;
+  
+  a{
+    text-decoration: none;
+  }
+
+  ul {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  @include headers(35px, 5px);
+}

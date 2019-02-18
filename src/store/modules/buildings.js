@@ -22,19 +22,19 @@ const state = {
 
 // getters
 const getters = {
-  get_properties: (state) => { 
+  get_properties: (state) => {
     return state.properties
   },
   get_status: (state) => (propertyObj) => {
-    let property = state.properties.find( property => propertyObj.name === property.name )
+    let property = state.properties.find(property => propertyObj.name === property.name)
     return property.status === 1 ? 'Available' : 'Not Available'
   },
   get_property_name: (state) => (permalink) => {
-    let property = state.properties.find( property => permalink === property.permalink )
+    let property = state.properties.find(property => permalink === property.permalink)
     return property.name
   },
   get_property: (state) => (permalink) => {
-    let property = state.properties.find( property => permalink === property.permalink )
+    let property = state.properties.find(property => permalink === property.permalink)
     return property
   }
 }

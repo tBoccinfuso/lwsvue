@@ -7,11 +7,9 @@ Vue.config.productionTip = false
 
 // Set the document title equal to the meta.title set in route, or use fallback.
 // This event fires when you begin navigating to a new route.
-router.afterEach((to, from) => {  
-  
+router.afterEach((to, from) => {
   // If going to a property page...
   if (to.name === 'property') {
-
     let propertyName = store.getters['buildings/get_property_name'](to.params.permalink)
     document.title = propertyName + to.meta.title || 'LWS-Vue'
 
