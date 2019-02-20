@@ -1,5 +1,6 @@
 <template>
   <footer id="footer">
+    <router-link to='/resources'>Resources</router-link>
     <p id="copyright">{{ `Copyright &copy; ${new Date().getUTCFullYear()} ${$store.state.app.app_name}` }}</p>
   </footer>
 </template>

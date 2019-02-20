@@ -5,6 +5,7 @@ import store from '@/store/index'
 // Import views
 import Home from '@/views/Home.vue'
 import Contact from '@/views/Contact.vue'
+import Resources from '@/views/Resources.vue'
 import Properties from '@/views/Properties.vue'
 import Property from '@/views/Property.vue'
 
@@ -34,6 +35,15 @@ export default new Router({
         description: 'Reach out to us.'
       },
       component: Contact
+    },
+    {
+      path: '/resources',
+      name: 'resources',
+      meta: {
+        title: `Resources ${titleEnding}`,
+        description: 'Get Learn\'t for what.'
+      },
+      component: Resources
     },
     {
       path: '/properties',
