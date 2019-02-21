@@ -72,6 +72,14 @@ export default {
       padding: 25px;
       border: 1px solid $dark-blue;
       margin: 5px;
+
+      @media #{$mobile} {
+        width: 100%;
+      }
+
+      @media #{$small} {
+        width: 31%;
+      }
     }
   }
 </style>
