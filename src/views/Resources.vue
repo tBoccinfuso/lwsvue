@@ -52,6 +52,16 @@ export default {
           name: 'Awesome Vue',
           link: 'https://github.com/vuejs/awesome-vue',
           desc: '🎉 A curated list of awesome things related to Vue.js'
+        },
+        {
+          name: 'Vue cheat sheet',
+          link: 'https://www.vuemastery.com/vue-cheat-sheet/',
+          desc: 'The Ultimate Vue.js Cheat Sheet'
+        },
+        {
+          name: 'Nuxt cheat sheet',
+          link: 'https://www.vuemastery.com/nuxt-cheat-sheet/',
+          desc: 'The Ultimate Nuxt.js Cheat Sheet'
         }
       ]
     }
