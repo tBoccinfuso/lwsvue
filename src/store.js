@@ -1,4 +1,4 @@
-// This file is here to show how you would build your store in 1 file.
+// This file is here to show how you would build your store in 1 file. Not actually in use.
 
 import Vue from 'vue'
 import Vuex from 'vuex'

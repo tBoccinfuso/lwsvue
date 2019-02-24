@@ -34,7 +34,7 @@ export default {
           desc: 'Documentaion for the Material based componenet library Vuetify.'
         },
         {
-          name: 'Vue bootstrap',
+          name: 'Vue Bootstrap',
           link: 'https://bootstrap-vue.js.org/docs',
           desc: 'Documentaion for the Vue Bootstrap library.'
         },

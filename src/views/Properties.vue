@@ -33,9 +33,9 @@ export default {
   props: {
     property: {}
   },
-  computed: {
+  computed: { // Computed properties are by default getter-only, but you can also provide a setter when you need it
     ...mapGetters({
-      get_properties: 'buildings/get_properties'
+      get_properties: 'buildings/get_properties' // map this.get_properties to this.$store.getters['buildings/get_properties']
     })
   },
   methods: { // aka functions
