@@ -39,11 +39,6 @@ export default {
           desc: 'Documentaion for the Vue Bootstrap library.'
         },
         {
-          name: 'Nuxt JS',
-          link: 'https://nuxtjs.org/',
-          desc: 'Documentaion for a Vue framework, Nuxt.'
-        },
-        {
           name: 'Axios',
           link: 'https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html',
           desc: 'A promise based HTTP client that allows your front end to consume apis.'
@@ -57,11 +52,6 @@ export default {
           name: 'Vue cheat sheet',
           link: 'https://www.vuemastery.com/vue-cheat-sheet/',
           desc: 'The Ultimate Vue.js Cheat Sheet'
-        },
-        {
-          name: 'Nuxt cheat sheet',
-          link: 'https://www.vuemastery.com/nuxt-cheat-sheet/',
-          desc: 'The Ultimate Nuxt.js Cheat Sheet'
         }
       ]
     }
