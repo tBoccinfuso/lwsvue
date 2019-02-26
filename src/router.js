@@ -6,16 +6,12 @@ import store from '@/store/index'
 
 import Home from '@/views/Home.vue'
 import Contact from '@/views/Contact.vue'
-// import Resources from '@/views/Resources.vue'
 import Properties from '@/views/Properties.vue'
 import Property from '@/views/Property.vue'
 
 // "Lazy load" in each view when they are requested.
-// const Home = () => import('@/views/Home.vue')
-// const Contact = () => import('@/views/Contact.vue')
 const Resources = () => import('@/views/Resources.vue')
-// const Properties = () => import('@/views/Properties.vue')
-// const Property = () => import('@/views/Property.vue')
+const ErrorPage = () => import('@/views/misc/404.vue')
 
 // Set ending for the document.title = to our App Name
 const titleEnding = `| ${store.state.app.app_name}`
@@ -30,8 +26,7 @@ export default new Router({
       path: '/', // route in url
       name: 'home',
       meta: { // meta tag values
-        title: `Home ${titleEnding}`,
-        description: 'Home page.'
+        title: `Home ${titleEnding}`
       },
       component: Home // what component (view) to render
     },
@@ -39,8 +34,7 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       meta: {
-        title: `Contact us ${titleEnding}`,
-        description: 'Reach out to us.'
+        title: `Contact us ${titleEnding}`
       },
       component: Contact
     },
@@ -48,8 +42,7 @@ export default new Router({
       path: '/resources',
       name: 'resources',
       meta: {
-        title: `Resources ${titleEnding}`,
-        description: 'Get Learn\'t for what.'
+        title: `Resources ${titleEnding}`
       },
       component: Resources
     },
@@ -57,8 +50,7 @@ export default new Router({
       path: '/properties',
       name: 'properties',
       meta: {
-        title: `Properties ${titleEnding}`,
-        description: 'Look how cool I am.'
+        title: `Properties ${titleEnding}`
       },
       component: Properties
     },
@@ -66,10 +58,16 @@ export default new Router({
       path: '/property/:permalink', // dynamic route using /:
       name: 'property',
       meta: {
-        title: ` ${titleEnding}`,
-        description: 'Look how cool I am.'
+        title: ` ${titleEnding}`
       },
       component: Property
+    },
+    {
+      path: '*',
+      meta: {
+        title: `404! Page not found ${titleEnding}`
+      },
+      component: ErrorPage
     }
   ]
 })
