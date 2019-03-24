@@ -41,3 +41,5 @@ yarn run test
 6. Splitting Files (modular code)
 
 7. Passing Props
+
+8. Using Slots
