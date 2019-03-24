@@ -1,6 +1,6 @@
 <template>
   <div class="resources">
-    <a v-for="resource in resources" class="resource" :class="resource.name" :key="resource.name" :href="resource.link" target="_blank">
+    <a v-for="resource in resources" class="resource" :class="resource.name" :key="resource.name" :href="resource.link" target="_blank" :title="resource.name">
       <h3>{{ resource.name }}</h3>
       <p>{{ resource.desc }}</p>
     </a>

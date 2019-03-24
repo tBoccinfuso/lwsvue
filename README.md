@@ -39,3 +39,5 @@ yarn run test
 5. Transitions
 
 6. Splitting Files (modular code)
+
+7. Passing Props
