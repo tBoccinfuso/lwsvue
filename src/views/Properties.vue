@@ -7,8 +7,6 @@
     <div class="property-list">
       <div v-for="property in properties" :key='property.id' class="property" :class="property.id.toString()">
 
-        <p><b>ID:</b> {{ property.id }}</p>
-        <p><b>Permalink:</b> {{ property.permalink }}</p>
         <p><b>Name:</b> {{ property.name }}</p>
         <p><b>Price:</b> ${{ property.min_rate }}</p>
         <p><b>Number of Suites:</b> {{ property.suite_count }}</p>
