@@ -4,12 +4,11 @@
     <p>Email us: {{ this.$store.state.app.client.email }}</p>
     <button id="show-modal" @click="showModal = true">Contact Us</button>
     <!-- use the modal component, pass in the prop -->
-    <ContactForm v-if="showModal" @close="showModal = false" >
+    <ContactForm v-if="showModal" @close="showModal = false" ContactFormHeader="Contact Form">
       <!--
         you can use custom content here to overwrite
         default content by passing in slots
       -->
-      <h3 slot="header">Contact Form</h3>
       <div class="footer-bottom" slot="client">
         <p>{{ get_client }}</p>
       </div>

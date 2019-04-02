@@ -5,9 +5,10 @@
         <div class="modal-container">
 
           <div class="modal-header">
-            <slot name="header">
-              default header
-            </slot>
+            <button class="modal-default-button" @click="$emit('close')">Close</button>
+            <h3 name="header">
+              {{ ContactFormHeader }}
+            </h3>
           </div>
 
           <div class="modal-body">
@@ -48,7 +49,10 @@
 
 <script>
 export default {
-  name: 'cointactForm'
+  name: 'cointactForm',
+  props: [
+    'ContactFormHeader'
+  ]
 }
 </script>
 
