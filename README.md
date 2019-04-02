@@ -1,12 +1,16 @@
-# vue4u
+# LWSVue
 
 A small little app to show off how Vue.js can work.
 
 ## Project setup
 
-```
-yarn install
-```
+Install [Node.js](https://nodejs.org/en/)
+
+Install VueCLI: `npm install -g @vue/cli`
+
+Install Yarn: `npm install -g yarn`
+
+Install dependencies:`yarn install`
 
 ### Compiles and hot-reloads for development
 
