@@ -13,7 +13,7 @@
     <div class="suites">
       <div class="suite" v-for="suite in property.suites" :key="suite.type_name">
         <p><b>Type Name:</b> {{ suite.type_name }}</p>
-        <p><b>Beds:</b> {{ suite.rbedate }}</p>
+        <p><b>Beds:</b> {{ suite.bed }}</p>
         <p><b>Baths:</b> {{ suite.bath }}</p>
         <p><b>Rate:</b> ${{ suite.rate }}</p>
       </div>

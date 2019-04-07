@@ -10,7 +10,7 @@
         default content by passing in slots
       -->
       <div class="footer-bottom" slot="client">
-        <p>{{ get_client }}</p>
+        <p>Thank you for reaching out to {{ get_client }}!</p>
       </div>
     </ContactForm>
   </div>

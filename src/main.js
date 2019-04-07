@@ -25,6 +25,7 @@ router.afterEach(async (to, from) => {
       document.title = propertyName + to.meta.title || 'LWS-Vue'
     } catch (err) {
       console.log(err)
+      document.title = 'Property Page' || 'LWS-Vue'
     }
   } else {
     document.title = to.meta.title || 'LWS-Vue'
