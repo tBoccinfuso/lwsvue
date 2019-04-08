@@ -1,6 +1,6 @@
 # LWSVue
 
-A small little app to show off how Vue.js can work.
+A small little app to show off how Vue.js can work. Mock database can be found here: [Mock DB](https://github.com/tBoccinfuso/demo)
 
 ## Project setup
 
