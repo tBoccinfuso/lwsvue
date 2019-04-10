@@ -49,3 +49,5 @@ yarn run test
 8. Using Slots
 
 9. Mixins
+
+10. Directives
