@@ -47,3 +47,5 @@ yarn run test
 7. Passing Props
 
 8. Using Slots
+
+9. Mixins
