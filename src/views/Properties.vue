@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import axios from 'axios'
 import mixin from '../mixins/propertyStatus.js' // import our custom mixin for formatting the property status
 
@@ -34,9 +33,6 @@ export default {
     return {
       properties: []
     }
-  },
-  props: {
-    property: {}
   },
   mixins: [ // by exposing our custom made mixin for the property status, we are able to use it in our template by calling the method.
     mixin
@@ -48,11 +44,6 @@ export default {
     } catch (err) {
       console.log(err)
     }
-  },
-  computed: { // Computed properties are by default getter-only, but you can also provide a setter when you need it
-    ...mapGetters({
-      get_properties: 'buildings/get_properties' // map this.get_properties to this.$store.getters['buildings/get_properties']
-    })
   },
   methods: { // aka functions
     get_property_status (propertyObject) {
