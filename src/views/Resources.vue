@@ -1,5 +1,6 @@
 <template>
   <div class="resources">
+   <!-- Below is an example of how we can bind data to attributes. Binding to attrs is done with :<attribute-name>="<data>" -->
     <a :key="resource.name" v-for="resource in resources" class="resource" :class="resource.name" :href="resource.link" target="_blank" :title="resource.name">
       <h3>{{ resource.name }}</h3>
       <p>{{ resource.desc }}</p>
