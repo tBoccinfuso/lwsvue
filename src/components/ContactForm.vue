@@ -35,6 +35,7 @@
 
           <div class="modal-footer">
             <slot name="footer">
+              <!-- Here our is where our slots will be added in (if we pass any) -->
               <slot name="client"></slot>
               <button class="modal-default-button" @click="$emit('close')">
                 Submit
